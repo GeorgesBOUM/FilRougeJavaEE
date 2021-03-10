@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Création d'un client</title>
+		<title>Formulaire création d'un client</title>
 		<link type="text/css" rel="stylesheet" href="style.css" />
 	</head>
 	<body>

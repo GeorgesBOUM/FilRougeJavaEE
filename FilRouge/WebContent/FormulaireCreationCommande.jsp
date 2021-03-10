@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Formulaire Création commande</title>
+		<title>Formulaire création commande</title>
 		<link type="text/css" rel="stylesheet" href="style.css" />
 	</head>
 	<body>
