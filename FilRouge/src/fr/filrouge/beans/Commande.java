@@ -5,11 +5,11 @@ public class Commande {
 	double montant;
 	String modePaiement;
 	String modeLivraison;
-	boolean statutLivraison;
-	boolean statutCommande;
+	String statutLivraison;
+	String statutCommande;
 	
-	public Commande(Client client, double montant, String modePaiement, String modeLivraison, boolean statutLivraison,
-			boolean statutCommande) {
+	public Commande(Client client, double montant, String modePaiement, String modeLivraison, String statutLivraison,
+			String statutCommande) {
 		this.client = client;
 		this.montant = montant;
 		this.modePaiement = modePaiement;
@@ -34,11 +34,11 @@ public class Commande {
 		return modeLivraison;
 	}
 
-	public boolean isStatutLivraison() {
+	public String getStatutLivraison() {
 		return statutLivraison;
 	}
 
-	public boolean isStatutCommande() {
+	public String getStatutCommande() {
 		return statutCommande;
 	}
 
@@ -58,11 +58,11 @@ public class Commande {
 		this.modeLivraison = modeLivraison;
 	}
 
-	public void setStatutLivraison(boolean statutLivraison) {
+	public void setStatutLivraison(String statutLivraison) {
 		this.statutLivraison = statutLivraison;
 	}
 
-	public void setStatutCommande(boolean statutCommande) {
+	public void setStatutCommande(String statutCommande) {
 		this.statutCommande = statutCommande;
 	}
 	
