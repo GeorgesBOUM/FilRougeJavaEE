@@ -14,7 +14,7 @@
                     <legend>Informations client</legend>
     
                     <label for="nomClient">Nom <span class="requis">*</span></label>
-                    <input type="text" id="nomClient" name="nomClient" value="" size="20" maxlength="20" />
+                    <input type="text" id="nomClient" name="nomClient" value='${nom }' size="20" maxlength="20" />
                     <br />
                     
                     <label for="prenomClient">Prénom </label>
@@ -22,11 +22,11 @@
                     <br />
     
                     <label for="adresseClient">Adresse de livraison <span class="requis">*</span></label>
-                    <input type="text" id="adresseClient" name="adresseClient" value="" size="20" maxlength="20" />
+                    <input type="text" id="adresseClient" name="adresseClient" value='${adresse }' size="20" maxlength="20" />
                     <br />
     
                     <label for="telephoneClient">Numéro de téléphone <span class="requis">*</span></label>
-                    <input type="text" id="telephoneClient" name="telephoneClient" value="" size="20" maxlength="20" />
+                    <input type="text" id="telephoneClient" name="telephoneClient" value='${telephone }' size="20" maxlength="20" />
                     <br />
                     
                     <label for="emailClient">Adresse email</label>
