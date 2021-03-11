@@ -18,7 +18,7 @@
                     <br />
                     
                     <label for="prenomClient">Prénom </label>
-                    <input type="text" id="prenomClient" name="prenomClient" value="" size="20" maxlength="20" />
+                    <input type="text" id="prenomClient" name="prenomClient" value='${prenom }' size="20" maxlength="20" />
                     <br />
     
                     <label for="adresseClient">Adresse de livraison <span class="requis">*</span></label>
@@ -30,7 +30,7 @@
                     <br />
                     
                     <label for="emailClient">Adresse email</label>
-                    <input type="email" id="emailClient" name="emailClient" value="" size="20" maxlength="60" />
+                    <input type="email" id="emailClient" name="emailClient" value='${mail }' size="20" maxlength="60" />
                     <br />
                 </fieldset>
                 <input type="submit" value="Valider"  />

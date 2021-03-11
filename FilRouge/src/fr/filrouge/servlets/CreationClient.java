@@ -38,10 +38,30 @@ public class CreationClient extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String nom = request.getParameter("nomClient");
+		String prenom = request.getParameter("prenomClient");
+		String adresse = request.getParameter("adresseClient");
+		String telephone = request.getParameter("telephoneClient");
+		String mail = request.getParameter("emailClient");
+		String message = "";
 		
-		
-		
-		//doGet(request, response);
+		if (nom.trim().isEmpty() || adresse.trim().isEmpty() || telephone.trim().isEmpty()) {
+			message = "Erreur - Vous n'avez pas rempli correctement tous les champs obligatoires. <br/>";
+			request.setAttribute("message", message);
+			request.setAttribute("nom", nom);
+			request.setAttribute("prenom", prenom);
+			request.setAttribute("adresse", adresse);
+			request.setAttribute("telephone", telephone);
+			request.setAttribute("mail", mail);
+			request.getRequestDispatcher("/FormulaireCreationClient.jsp").forward(request, response);
+		} else {
+			message = "Client créé avec succès";
+			Client client = new Client(nom, prenom, adresse, telephone, mail);
+			request.setAttribute("message", message);
+			request.setAttribute("client", client);
+			request.getRequestDispatcher("/AffichageInfoClient.jsp").forward(request, response);
+		}
+//		doGet(request, response);
 	}
 
 }
