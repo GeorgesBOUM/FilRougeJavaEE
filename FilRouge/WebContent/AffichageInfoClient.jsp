@@ -5,6 +5,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Affichage infos client</title>
+		<link type="text/css" rel="stylesheet" href="style.css" />
 	</head>
 <body>
 	<p>${message }</p>
