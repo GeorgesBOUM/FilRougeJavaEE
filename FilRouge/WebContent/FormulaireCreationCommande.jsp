@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		 <div>
-            <form method="get" action="CreationCommande">
+            <form method="post" action="CreationCommande">
                 <fieldset>
                     <legend>Informations client</legend>
     
