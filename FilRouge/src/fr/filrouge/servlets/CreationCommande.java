@@ -37,6 +37,18 @@ public class CreationCommande extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
+		String nom = request.getParameter("nomClient");
+		String prenom = request.getParameter("prenomClient");
+		String adresse = request.getParameter("adresseClient");
+		String telephone = request.getParameter("telephoneClient");
+		String mail = request.getParameter("emailClient");
+		
+		double montant = Double.parseDouble(request.getParameter("montantCommande"));
+		String modePaiement = request.getParameter("modePaiementCommande");
+		String statutPaiement = request.getParameter("statutPaiementCommande");
+		String statutLivraison = request.getParameter("statutLivraisonCommande");
+		
+		String message = "";
 	}
 
 }
