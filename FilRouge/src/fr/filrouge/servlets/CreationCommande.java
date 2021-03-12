@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.filrouge.beans.Client;
+import fr.filrouge.beans.Commande;
+
 /**
  * Servlet implementation class CreationCommande
  */
@@ -53,6 +56,7 @@ public class CreationCommande extends HttpServlet {
 		String modePaiement = request.getParameter("modePaiementCommande");
 		String statutPaiement = request.getParameter("statutPaiementCommande");
 		String statutLivraison = request.getParameter("statutLivraisonCommande");
+		String modeLivraison = request.getParameter("modeLivraisonCommande");
 		
 		String message = "";
 		
@@ -71,7 +75,13 @@ public class CreationCommande extends HttpServlet {
 			request.setAttribute("statutLivraison", statutLivraison);
 			request.getRequestDispatcher("FormulaireCreationCommande").forward(request, response);
 		} else {
-
+			message = "Commande créée avec succès";
+			Client client = new Client(nom, prenom, adresse, telephone, mail);
+			Commande commande = new Commande(client, montant, modePaiement, modeLivraison, statutLivraison, statutPaiement);
+			request.setAttribute("message", message);
+			request.setAttribute("client", client);
+			request.setAttribute("commande", commande);
+			request.getRequestDispatcher("/AffichageInfoCommande").forward(request, response);
 		}
 	}
 
