@@ -6,16 +6,16 @@ public class Commande {
 	String modePaiement;
 	String modeLivraison;
 	String statutLivraison;
-	String statutCommande;
+	String statutPaiement;
 	
 	public Commande(Client client, double montant, String modePaiement, String modeLivraison, String statutLivraison,
-			String statutCommande) {
+			String statutPaiement) {
 		this.client = client;
 		this.montant = montant;
 		this.modePaiement = modePaiement;
 		this.modeLivraison = modeLivraison;
 		this.statutLivraison = statutLivraison;
-		this.statutCommande = statutCommande;
+		this.statutPaiement= statutPaiement;
 	}
 
 	public Client getClient() {
@@ -38,8 +38,8 @@ public class Commande {
 		return statutLivraison;
 	}
 
-	public String getStatutCommande() {
-		return statutCommande;
+	public String getStatutPaiement() {
+		return statutPaiement;
 	}
 
 	public void setClient(Client client) {
@@ -62,8 +62,8 @@ public class Commande {
 		this.statutLivraison = statutLivraison;
 	}
 
-	public void setStatutCommande(String statutCommande) {
-		this.statutCommande = statutCommande;
+	public void setStatutPaiement(String statutPaiement) {
+		this.statutPaiement = statutPaiement;
 	}
 	
 }
