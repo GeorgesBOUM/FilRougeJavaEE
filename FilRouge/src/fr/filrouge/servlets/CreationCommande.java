@@ -43,12 +43,36 @@ public class CreationCommande extends HttpServlet {
 		String telephone = request.getParameter("telephoneClient");
 		String mail = request.getParameter("emailClient");
 		
-		double montant = Double.parseDouble(request.getParameter("montantCommande"));
+		double montant;
+		try {
+			montant = Double.parseDouble(request.getParameter("montantCommande"));
+		} catch (NumberFormatException e) {
+			montant = -1;
+		}
+		
 		String modePaiement = request.getParameter("modePaiementCommande");
 		String statutPaiement = request.getParameter("statutPaiementCommande");
 		String statutLivraison = request.getParameter("statutLivraisonCommande");
 		
 		String message = "";
+		
+		if (nom.trim().isEmpty() || adresse.trim().isEmpty() || telephone.trim().isEmpty()
+				|| montant == -1 || modePaiement.trim().isEmpty() || statutPaiement.trim().isEmpty()
+				|| statutLivraison.trim().isBlank()) {
+			message = "Erreur - Vous n'avez pas rempli correctement tous les champs obligatoires. <br/>";
+			request.setAttribute("message", message);
+			request.setAttribute("nom", nom);
+			request.setAttribute("prenom", prenom);
+			request.setAttribute("adresse", adresse);
+			request.setAttribute("telephone", telephone);
+			request.setAttribute("mail", mail);
+			request.setAttribute("modePaiement", modePaiement);
+			request.setAttribute("statutPaiement", statutPaiement);
+			request.setAttribute("statutLivraison", statutLivraison);
+			request.getRequestDispatcher("FormulaireCreationCommande").forward(request, response);
+		} else {
+
+		}
 	}
 
 }
