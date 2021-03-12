@@ -73,7 +73,7 @@ public class CreationCommande extends HttpServlet {
 			request.setAttribute("modePaiement", modePaiement);
 			request.setAttribute("statutPaiement", statutPaiement);
 			request.setAttribute("statutLivraison", statutLivraison);
-			request.getRequestDispatcher("FormulaireCreationCommande").forward(request, response);
+			request.getRequestDispatcher("/FormulaireCreationCommande").forward(request, response);
 		} else {
 			message = "Commande créée avec succès";
 			Client client = new Client(nom, prenom, adresse, telephone, mail);
