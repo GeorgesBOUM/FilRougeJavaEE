@@ -8,8 +8,8 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 <body>
-	<p>Client</p>
 	<p>${message }</p>
+	<p>Client</p>
 	<p>Nom : ${client.nom }</p>
 	<p>Prénom : ${client.prenom }</p>
 	<p>Adresse : ${client.adresseLivraison}</p>
