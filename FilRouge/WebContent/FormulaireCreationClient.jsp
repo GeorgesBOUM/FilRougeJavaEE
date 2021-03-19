@@ -5,7 +5,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Formulaire création d'un client</title>
-		<link type="text/css" rel="stylesheet" href="style.css" />
+		<link type="text/css" rel="stylesheet" href="/inc/style.css" />
 	</head>
 	<body>
 		<div>
