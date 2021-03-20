@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <!DOCTYPE html>
 <html>
 	<head>
@@ -33,6 +34,7 @@
                     <input type="email" id="emailClient" name="emailClient" value='${mail }' size="20" maxlength="60" />
                     <br />
                     -->
+                    <c:import url="/inc/IncFormulaireClient.jsp"></c:import>
                 </fieldset>
                 <input type="submit" value="Valider"  />
                 <input type="reset" value="Remettre à zéro" /> <br />
