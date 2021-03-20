@@ -12,7 +12,7 @@
             <form method="post" action="CreationClient">
                 <fieldset>
                     <legend>Informations client</legend>
-    
+                    <!--  
                     <label for="nomClient">Nom <span class="requis">*</span></label>
                     <input type="text" id="nomClient" name="nomClient" value='${nom }' size="20" maxlength="20" />
                     <br />
@@ -32,6 +32,7 @@
                     <label for="emailClient">Adresse email</label>
                     <input type="email" id="emailClient" name="emailClient" value='${mail }' size="20" maxlength="60" />
                     <br />
+                    -->
                 </fieldset>
                 <input type="submit" value="Valider"  />
                 <input type="reset" value="Remettre à zéro" /> <br />
