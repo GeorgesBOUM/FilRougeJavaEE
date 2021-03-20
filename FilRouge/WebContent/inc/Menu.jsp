@@ -1,13 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Menu</title>
-	</head>
-<body>
-	<a href="FormulaireCreationClient.jsp" alt="lien vers création nouveau client">Créer un nouveau client</a>
-	<a href="FormulaireCreationCommande.jsp" alt="lien vers création nouvelles commande">Créer une nouvelle commande</a>
-</body>
-</html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<div id="menu">
+    <p><a href="<c:url value="/FormulaireCreationClient.jsp" var="lienFormClient"/>">Créer un nouveau client</a></p>
+    <p><a href="<c:url value="/FormulaireCreationCommande.jsp" var="lienFormCommande"/>">Créer une nouvelle commande</a></p>
+</div>
