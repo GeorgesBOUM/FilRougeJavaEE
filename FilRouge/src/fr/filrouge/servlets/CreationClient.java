@@ -31,7 +31,8 @@ public class CreationClient extends HttpServlet {
     public static final String ATTRIBUT_CLIENT      = "client";
     public static final String ATTRIBUT_MESSAGE     = "message";
  
-    public static final String VUE             = "/AffichageInfoClient.jsp";
+    public static final String VUE_RESULTAT         = "/AffichageInfoClient.jsp";
+    public static final String VUE_FORMULAIRE       = "/FormulaireCreationClient.jsp";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -47,7 +48,7 @@ public class CreationClient extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		request.getRequestDispatcher("/FormulaireCreationClient.jsp").forward(request, response);
+		request.getRequestDispatcher(VUE_FORMULAIRE).forward(request, response);
 	}
 
 	/**
@@ -70,13 +71,13 @@ public class CreationClient extends HttpServlet {
 			request.setAttribute(ATTRIBUT_ADRESSE, adresse);
 			request.setAttribute(ATTRIBUT_TELEPHONE, telephone);
 			request.setAttribute(ATTRIBUT_EMAIL, mail);
-			request.getRequestDispatcher(VUE).forward(request, response);
+			request.getRequestDispatcher(VUE_FORMULAIRE).forward(request, response);
 		} else {
 			message = "Client créé avec succès";
 			Client client = new Client(nom, prenom, adresse, telephone, mail);
 			request.setAttribute(ATTRIBUT_MESSAGE, message);
 			request.setAttribute(ATTRIBUT_CLIENT, client);
-			request.getRequestDispatcher("/AffichageInfoClient.jsp").forward(request, response);
+			request.getRequestDispatcher(VUE_RESULTAT).forward(request, response);
 		}
 //		doGet(request, response);
 	}

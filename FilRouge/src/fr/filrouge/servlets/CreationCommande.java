@@ -42,7 +42,8 @@ public class CreationCommande extends HttpServlet {
     public static final String ATTRIBUT_CLIENT    = "client";
     public static final String ATTRIBUT_MESSAGE   = "message";
  
-    public static final String VUE                = "/AffichageInfoCommande.jsp";
+    public static final String VUE_FORMULAIRE     = "/FormulaireCreationCommande.jsp";
+    public static final String VUE_RESULTAT       = "/AffichageInfoCommande.jsp";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -58,7 +59,7 @@ public class CreationCommande extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		request.getRequestDispatcher("/FormulaireCreationCommande.jsp").forward(request, response);
+		request.getRequestDispatcher(VUE_FORMULAIRE).forward(request, response);
 	}
 
 	/**
@@ -100,7 +101,7 @@ public class CreationCommande extends HttpServlet {
 			request.setAttribute(ATTRIBUT_MODE_PAIEMENT, modePaiement);
 			request.setAttribute(ATTRIBUT_STATUT_PAIEMENT, statutPaiement);
 			request.setAttribute(ATTRIBUT_STATUT_LIVRAISON, statutLivraison);
-			request.getRequestDispatcher("/FormulaireCreationCommande.jsp").forward(request, response);
+			request.getRequestDispatcher(VUE_FORMULAIRE).forward(request, response);
 		} else {
 			message = "Commande créée avec succès";
 			Client client = new Client(nom, prenom, adresse, telephone, mail);
@@ -108,7 +109,7 @@ public class CreationCommande extends HttpServlet {
 			request.setAttribute(ATTRIBUT_MESSAGE , message);
 			request.setAttribute(ATTRIBUT_CLIENT, client);
 			request.setAttribute(ATTRIBUT_COMMANDE , commande);
-			request.getRequestDispatcher(VUE).forward(request, response);
+			request.getRequestDispatcher(VUE_RESULTAT).forward(request, response);
 		}
 	}
 
