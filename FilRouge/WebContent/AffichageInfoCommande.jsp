@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Affichage info commande</title>
-		<link rel="stylesheet" type="text/css" href="/inc/style.css">
+		<link rel="stylesheet" type="text/css" href='<c:url value="inc/style.css"></c:url>'>
 	</head>
 <body>
 	<p class="info">${ message }</p>

@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Formulaire création commande</title>
-		<link type="text/css" rel="stylesheet" href="/inc/style.css" />
+		<link type="text/css" rel="stylesheet" href='<c:url value="inc/style.css"></c:url>' />
 	</head>
 	<body>
 		 <div>
