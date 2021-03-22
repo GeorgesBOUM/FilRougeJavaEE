@@ -39,7 +39,7 @@
                 <input type="submit" value="Valider"  />
                 <input type="reset" value="Remettre à zéro" /> <br />
             </form>
-            <p>${message }</p>
+            <p class="info">${ message }</p>
         </div>
 	</body>
 </html>

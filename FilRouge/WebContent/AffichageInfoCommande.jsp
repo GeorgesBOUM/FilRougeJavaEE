@@ -5,10 +5,11 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>Affichage info commande</title>
 		<link rel="stylesheet" type="text/css" href="/inc/style.css">
 	</head>
 <body>
+	<p class="info">${ message }</p>
 	<p>${message }</p>
 	<p>Client</p>
 	<p>Nom : ${client.nom }</p>

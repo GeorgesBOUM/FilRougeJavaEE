@@ -9,7 +9,7 @@
 		<link type="text/css" rel="stylesheet" href="/inc/style.css" />
 	</head>
 <body>
-	<p>${message }</p>
+	<p class="info">${ message }</p>
 	<p>Nom : ${client.nom }</p>
 	<p>Prénom : ${client.prenom }</p>
 	<p>Adresse : ${client.adresseLivraison}</p>
