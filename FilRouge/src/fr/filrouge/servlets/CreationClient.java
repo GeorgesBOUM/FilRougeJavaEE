@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fr.filrouge.beans.Client;
+import fr.filrouge.validations.ValidationClient;
 
 /**
  * Servlet implementation class CreationClient
@@ -18,6 +19,9 @@ public class CreationClient extends HttpServlet {
 	
 	public static final String VUE_RESULTAT         = "/WEB-INF/vues/AffichageInfoClient.jsp";
     public static final String VUE_FORMULAIRE       = "/WEB-INF/vues/FormulaireCreationClient.jsp";
+    
+    public static final String ATT_CLIENT           = "client";
+    public static final String ATT_VALIDATION       = "validation";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -31,7 +35,7 @@ public class CreationClient extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		request.getRequestDispatcher(VUE_FORMULAIRE).forward(request, response);
 	}
@@ -40,31 +44,18 @@ public class CreationClient extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String nom = request.getParameter(CHAMP_NOM);
-		String prenom = request.getParameter(CHAMP_PRENOM);
-		String adresse = request.getParameter(CHAMP_ADRESSE);
-		String telephone = request.getParameter(CHAMP_TELEPHONE);
-		String mail = request.getParameter(CHAMP_EMAIL);
-		String message = "";
 		
-		if (nom.trim().isEmpty() || adresse.trim().isEmpty() || telephone.trim().isEmpty()) {
-			message = "Erreur - Vous n'avez pas rempli correctement tous les champs obligatoires. <br/>";
-			request.setAttribute(ATTRIBUT_MESSAGE, message);
-			request.setAttribute(ATTRIBUT_NOM, nom);
-			request.setAttribute(ATTRIBUT_PRENOM, prenom);
-			request.setAttribute(ATTRIBUT_ADRESSE, adresse);
-			request.setAttribute(ATTRIBUT_TELEPHONE, telephone);
-			request.setAttribute(ATTRIBUT_EMAIL, mail);
-			request.getRequestDispatcher(VUE_FORMULAIRE).forward(request, response);
-		} else {
-			message = "Client créé avec succès";
-			Client client = new Client(nom, prenom, adresse, telephone, mail);
-			request.setAttribute(ATTRIBUT_MESSAGE, message);
-			request.setAttribute(ATTRIBUT_CLIENT, client);
+		ValidationClient validationClient = new ValidationClient();
+		Client client = validationClient.validerNouveauClient(request);
+		
+		request.setAttribute(ATT_VALIDATION, validationClient);
+		request.setAttribute(ATT_CLIENT, client);
+		
+		if (validationClient.getErreurs().isEmpty()) {
 			request.getRequestDispatcher(VUE_RESULTAT).forward(request, response);
+		} else {
+			request.getRequestDispatcher(VUE_FORMULAIRE).forward(request, response);
 		}
-//		doGet(request, response);
 	}
 
 }
