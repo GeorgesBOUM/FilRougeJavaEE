@@ -16,23 +16,8 @@ import fr.filrouge.beans.Client;
 public class CreationClient extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	public static final String CHAMP_NOM       = "nomClient";
-    public static final String CHAMP_PRENOM    = "prenomClient";
-    public static final String CHAMP_ADRESSE   = "adresseClient";
-    public static final String CHAMP_TELEPHONE = "telephoneClient";
-    public static final String CHAMP_EMAIL     = "emailClient";
-    
-    public static final String ATTRIBUT_NOM       = "nom";
-    public static final String ATTRIBUT_PRENOM    = "prenom";
-    public static final String ATTRIBUT_ADRESSE   = "adresse";
-    public static final String ATTRIBUT_TELEPHONE = "telephone";
-    public static final String ATTRIBUT_EMAIL     = "email";
- 
-    public static final String ATTRIBUT_CLIENT      = "client";
-    public static final String ATTRIBUT_MESSAGE     = "message";
- 
-    public static final String VUE_RESULTAT         = "/AffichageInfoClient.jsp";
-    public static final String VUE_FORMULAIRE       = "/FormulaireCreationClient.jsp";
+	public static final String VUE_RESULTAT         = "/WEB-INF/vues/AffichageInfoClient.jsp";
+    public static final String VUE_FORMULAIRE       = "/WEB-INF/vues/FormulaireCreationClient.jsp";
        
     /**
      * @see HttpServlet#HttpServlet()

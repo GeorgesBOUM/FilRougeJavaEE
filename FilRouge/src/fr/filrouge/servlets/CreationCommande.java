@@ -42,8 +42,8 @@ public class CreationCommande extends HttpServlet {
     public static final String ATTRIBUT_CLIENT    = "client";
     public static final String ATTRIBUT_MESSAGE   = "message";
  
-    public static final String VUE_FORMULAIRE     = "/FormulaireCreationCommande.jsp";
-    public static final String VUE_RESULTAT       = "/AffichageInfoCommande.jsp";
+    public static final String VUE_FORMULAIRE     = "/WEB-INF/vues/FormulaireCreationCommande.jsp";
+    public static final String VUE_RESULTAT       = "/WEB-INF/vues/AffichageInfoCommande.jsp";
        
     /**
      * @see HttpServlet#HttpServlet()
