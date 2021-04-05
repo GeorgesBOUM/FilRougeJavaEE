@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/Aiguillage")
 public class Aiguillage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	private static final String VUE_AIGUILLAGE = "/WEB-INF/vues/Aiguillage.jsp";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -28,7 +30,7 @@ public class Aiguillage extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
-		request.getRequestDispatcher("/WEB-INF/vues/Aiguillage.jsp").forward(request, response);
+		request.getRequestDispatcher(VUE_AIGUILLAGE).forward(request, response);
 	}
 
 	/**
