@@ -39,7 +39,7 @@
                 <input type="submit" value="Valider"  />
                 <input type="reset" value="Remettre à zéro" /> <br />
             </form>
-            <p class="info">${ message }</p>
+            <p class="info"><c:out value="${validationClient.resultat }"/></p>
         </div>
 	</body>
 </html>
