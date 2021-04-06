@@ -4,7 +4,7 @@
 
 <label for="nomClient">Nom <span class="requis">*</span></label>
 <input type="text" id="nomClient" name="nomClient" value="<c:out value="${client.nom }"/>" size="20" maxlength="20" />
-<span class="erreur">${validationClient.erreurs['nomClient']}</span>
+<span class="erreur">${validation.erreurs['nomClient']}</span>
 <br />
                     
 <label for="prenomClient">Prénom </label>
@@ -13,15 +13,15 @@
     
 <label for="adresseClient">Adresse de livraison <span class="requis">*</span></label>
 <input type="text" id="adresseClient" name="adresseClient" value="<c:out value="${client.adresseLivraison }"/>" size="20" maxlength="20" />
-<span class="erreur">${validationClient.erreurs['adresseClient']}</span>
+<span class="erreur">${validation.erreurs['adresseClient']}</span>
 <br />
     
 <label for="telephoneClient">Numéro de téléphone <span class="requis">*</span></label>
 <input type="text" id="telephoneClient" name="telephoneClient" value="<c:out value="${client.telephone }"/>" size="20" maxlength="20" />
-<span class="erreur">${validationClient.erreurs['telephoneClient']}</span>
+<span class="erreur">${validation.erreurs['telephoneClient']}</span>
 <br />
                     
 <label for="emailClient">Adresse email</label>
 <input type="email" id="emailClient" name="emailClient" value="<c:out value="${client.mail }"/>" size="20" maxlength="60" />
-<span class="erreur">${validationClient.erreurs['emailClient']}</span>
+<span class="erreur">${validation.erreurs['emailClient']}</span>
 <br />
