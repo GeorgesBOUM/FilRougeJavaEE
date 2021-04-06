@@ -103,8 +103,10 @@ public class ValidationClient {
     }
     
     private void validationNom(String nom) throws Exception {
-    	if ( nom != null && nom.length() < 2 ) {
-            throw new Exception( "Le nom d'utilisateur doit contenir au moins 2 caractères." );
+    	if ( nom != null ) {
+    		if ( nom.length() < 2 ) {
+    			throw new Exception( "Le nom d'utilisateur doit contenir au moins 2 caractères." );
+			}
         } else {
         	throw new Exception( "Merci de saisir votre Nom" );
         }
