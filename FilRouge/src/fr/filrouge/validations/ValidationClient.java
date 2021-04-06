@@ -117,11 +117,13 @@ public class ValidationClient {
 	}
 	
 	private void validationAdresse(String adresse) throws Exception{
-		if ( adresse != null && adresse.length() < 2 ) {
-            throw new Exception( "L'adresse doit contenir au moins 10 caractères." );
-        } else {
-        	throw new Exception( "Merci de saisir votre Adresse" );
-        }
+		if ( adresse != null ) {
+			if ( adresse.length() < 2 ) {
+				throw new Exception( "L'adresse doit contenir au moins 10 caractères." );
+			} 
+		} else {
+			throw new Exception( "Merci de saisir votre Adresse" );
+		}
 	}
 	
 	private void validationTelephone(String telephone) throws Exception {
