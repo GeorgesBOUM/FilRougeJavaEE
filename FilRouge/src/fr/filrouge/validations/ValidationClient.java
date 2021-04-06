@@ -50,30 +50,35 @@ public class ValidationClient {
 		} catch (Exception e) {
 			setErreur(CHAMP_NOM, e.getMessage());
 		}
+    	client.setNom(nom);
     	
     	try {
 			validationPrenom(prenom);
 		} catch (Exception e) {
 			setErreur(CHAMP_PRENOM, e.getMessage());
 		}
+    	client.setPrenom(prenom);
     	
     	try {
 			validationAdresse(adresse);
 		} catch (Exception e) {
 			setErreur(CHAMP_ADRESSE, e.getMessage());
 		}
+    	client.setAdresseLivraison(adresse);
     	
     	try {
 			validationTelephone(telephone);
 		} catch (Exception e) {
 			setErreur(CHAMP_TELEPHONE, e.getMessage());
 		}
+    	client.setTelephone(telephone);
     	
     	try {
 			validationMail(mail);
 		} catch (Exception e) {
 			setErreur(mail, e.getMessage());
 		}
+    	client.setMail(mail);
     	
     	if (erreurs.isEmpty()) {
 			resultat = "Succès de la création du client";
