@@ -9,7 +9,7 @@
 		<link type="text/css" rel="stylesheet" href='<c:url value="inc/style.css"></c:url>' />
 	</head>
 <body>
-	<p class="info">${ validationClient.resultat }</p>
+	<p class="info">${ validation.resultat }</p>
 	<p>Nom : ${client.nom }</p>
 	<p>Prénom : ${client.prenom }</p>
 	<p>Adresse : ${client.adresseLivraison}</p>
