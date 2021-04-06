@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<div>
-            <form method="post" action="CreationClient">
+            <form method="post" action="<c:url value="/CreationClient"/>">
                 <fieldset>
                     <legend>Informations client</legend>
                     <!--  
