@@ -48,25 +48,25 @@ public class ValidationClient {
     	try {
 			validationNom(nom);
 		} catch (Exception e) {
-			setErreur(nom, e.getMessage());
+			setErreur(CHAMP_NOM, e.getMessage());
 		}
     	
     	try {
 			validationPrenom(prenom);
 		} catch (Exception e) {
-			setErreur(prenom, e.getMessage());
+			setErreur(CHAMP_PRENOM, e.getMessage());
 		}
     	
     	try {
 			validationAdresse(adresse);
 		} catch (Exception e) {
-			setErreur(adresse, e.getMessage());
+			setErreur(CHAMP_ADRESSE, e.getMessage());
 		}
     	
     	try {
 			validationTelephone(telephone);
 		} catch (Exception e) {
-			setErreur(telephone, e.getMessage());
+			setErreur(CHAMP_TELEPHONE, e.getMessage());
 		}
     	
     	try {
