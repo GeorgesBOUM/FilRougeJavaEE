@@ -8,15 +8,15 @@ public class Commande {
 	String statutLivraison;
 	String statutPaiement;
 	
-	public Commande(Client client, double montant, String modePaiement, String modeLivraison, String statutLivraison,
-			String statutPaiement) {
-		this.client = client;
-		this.montant = montant;
-		this.modePaiement = modePaiement;
-		this.modeLivraison = modeLivraison;
-		this.statutLivraison = statutLivraison;
-		this.statutPaiement= statutPaiement;
-	}
+//	public Commande(Client client, double montant, String modePaiement, String modeLivraison, String statutLivraison,
+//			String statutPaiement) {
+//		this.client = client;
+//		this.montant = montant;
+//		this.modePaiement = modePaiement;
+//		this.modeLivraison = modeLivraison;
+//		this.statutLivraison = statutLivraison;
+//		this.statutPaiement= statutPaiement;
+//	}
 
 	public Client getClient() {
 		return client;
