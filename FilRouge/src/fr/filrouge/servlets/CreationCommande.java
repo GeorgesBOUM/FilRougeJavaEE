@@ -47,7 +47,17 @@ public class CreationCommande extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		ValidationCommande validationCommande = new ValidationCommande();
+		Commande commande = validationCommande.validerNouvelleCommande(request);
 		
+		request.setAttribute(ATT_COMMANDE, commande);
+		request.setAttribute(ATT_VALIDATION, validationCommande);
+		
+		if (validationCommande.getErreurs().isEmpty()) {
+			request.getRequestDispatcher(VUE_RESULTAT).forward(request, response);
+		} else {
+			request.getRequestDispatcher(VUE_FORMULAIRE).forward(request, response);
+		}
 	}
 
 }
