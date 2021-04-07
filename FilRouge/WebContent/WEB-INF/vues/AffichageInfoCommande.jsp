@@ -9,14 +9,13 @@
 		<link rel="stylesheet" type="text/css" href='<c:url value="inc/style.css"></c:url>'>
 	</head>
 <body>
-	<p class="info">${ message }</p>
-	<p>${message }</p>
+	<p class="info">${ validation.resultat }</p>
 	<p>Client</p>
-	<p>Nom : ${client.nom }</p>
-	<p>Prénom : ${client.prenom }</p>
-	<p>Adresse : ${client.adresseLivraison}</p>
-	<p>Téléphone : ${client.telephone }</p>
-	<p>Email : ${client.mail }</p>
+	<p>Nom : ${commande.client.nom }</p>
+	<p>Prénom : ${commande.client.prenom }</p>
+	<p>Adresse : ${commande.client.adresseLivraison}</p>
+	<p>Téléphone : ${commande.client.telephone }</p>
+	<p>Email : ${commande.client.mail }</p>
 	<br>
 	<p>Commande</p>
 	<p>Date : </p>
