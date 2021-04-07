@@ -57,5 +57,7 @@ public class ValidationCommande {
         }
     }
     
-    
+    private void setErreur( String champ, String message ) {
+        erreurs.put( champ, message );
+    }
 }
