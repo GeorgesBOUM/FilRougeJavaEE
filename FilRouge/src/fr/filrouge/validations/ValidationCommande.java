@@ -43,7 +43,41 @@ public class ValidationCommande {
         
     	Commande commande = new Commande();
     	
-    	
+    	double valeurMontant = -1;
+        try {
+            valeurMontant = validationMontant( montant );
+        } catch ( Exception e ) {
+            setErreur( CHAMP_MONTANT, e.getMessage() );
+        }
+        commande.setMontant( valeurMontant );
+
+        try {
+            validationModePaiement( modePaiement );
+        } catch ( Exception e ) {
+            setErreur( CHAMP_MODE_PAIEMENT, e.getMessage() );
+        }
+        commande.setModePaiement( modePaiement );
+
+        try {
+            validationStatutPaiement( statutPaiement );
+        } catch ( Exception e ) {
+            setErreur( CHAMP_STATUT_PAIEMENT, e.getMessage() );
+        }
+        commande.setStatutPaiement( statutPaiement );
+
+        try {
+            validationModeLivraison( modeLivraison );
+        } catch ( Exception e ) {
+            setErreur( CHAMP_MODE_LIVRAISON, e.getMessage() );
+        }
+        commande.setModeLivraison( modeLivraison );
+
+        try {
+            validationStatutLivraison( statutLivraison );
+        } catch ( Exception e ) {
+            setErreur( CHAMP_STATUT_LIVRAISON, e.getMessage() );
+        }
+        commande.setStatutLivraison( statutLivraison );
     	
     	return commande;
 	}
