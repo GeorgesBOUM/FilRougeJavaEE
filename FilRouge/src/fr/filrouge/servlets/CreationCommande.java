@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import fr.filrouge.beans.Client;
 import fr.filrouge.beans.Commande;
+import fr.filrouge.validations.ValidationCommande;
 
 /**
  * Servlet implementation class CreationCommande
@@ -20,6 +21,9 @@ public class CreationCommande extends HttpServlet {
  
     public static final String VUE_FORMULAIRE     = "/WEB-INF/vues/FormulaireCreationCommande.jsp";
     public static final String VUE_RESULTAT       = "/WEB-INF/vues/AffichageInfoCommande.jsp";
+    
+    public static final String ATT_COMMANDE       = "commande";
+    public static final String ATT_VALIDATION     = "validation";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -42,6 +46,7 @@ public class CreationCommande extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		
 	}
 
