@@ -78,6 +78,12 @@ public class ValidationCommande {
             setErreur( CHAMP_STATUT_LIVRAISON, e.getMessage() );
         }
         commande.setStatutLivraison( statutLivraison );
+        
+        if ( erreurs.isEmpty() ) {
+            resultat = "Succès de la création de la commande.";
+        } else {
+            resultat = "Échec de la création de la commande.";
+        }
     	
     	return commande;
 	}
