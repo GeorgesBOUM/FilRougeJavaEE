@@ -57,6 +57,57 @@ public class ValidationCommande {
         }
     }
     
+    private double validationMontant( String montant ) throws Exception {
+        double temp;
+        if ( montant != null ) {
+            try {
+                temp = Double.parseDouble( montant );
+                if ( temp < 0 ) {
+                    throw new Exception( "Le montant doit être un nombre positif." );
+                }
+            } catch ( NumberFormatException e ) {
+                temp = -1;
+                throw new Exception( "Le montant doit être un nombre." );
+            }
+        } else {
+            temp = -1;
+            throw new Exception( "Merci d'entrer un montant." );
+        }
+        return temp;
+    }
+
+    private void validationModePaiement( String modePaiement ) throws Exception {
+        if ( modePaiement != null ) {
+            if ( modePaiement.length() < 2 ) {
+                throw new Exception( "Le mode de paiement doit contenir au moins 2 caractères." );
+            }
+        } else {
+            throw new Exception( "Merci d'entrer un mode de paiement." );
+        }
+    }
+
+    private void validationStatutPaiement( String statutPaiement ) throws Exception {
+        if ( statutPaiement != null && statutPaiement.length() < 2 ) {
+            throw new Exception( "Le statut de paiement doit contenir au moins 2 caractères." );
+        }
+    }
+
+    private void validationModeLivraison( String modeLivraison ) throws Exception {
+        if ( modeLivraison != null ) {
+            if ( modeLivraison.length() < 2 ) {
+                throw new Exception( "Le mode de livraison doit contenir au moins 2 caractères." );
+            }
+        } else {
+            throw new Exception( "Merci d'entrer un mode de livraison." );
+        }
+    }
+
+    private void validationStatutLivraison( String statutLivraison ) throws Exception {
+        if ( statutLivraison != null && statutLivraison.length() < 2 ) {
+            throw new Exception( "Le statut de livraison doit contenir au moins 2 caractères." );
+        }
+    }
+    
     private void setErreur( String champ, String message ) {
         erreurs.put( champ, message );
     }
