@@ -11,6 +11,7 @@
 	<body>
 		 <div>
             <form method="post" action="CreationCommande">
+            	<c:set var="client" value="${ commande.client }" scope="request" />
                 <fieldset>
                     <legend>Informations client</legend>                    
                     <!--
@@ -45,29 +46,29 @@
                     <br />
                     
                     <label for="montantCommande">Montant <span class="requis">*</span></label>
-                    <input type="text" id="montantCommande" name="montantCommande" value="" size="20" maxlength="20" />
+                    <input type="text" id="montantCommande" name="montantCommande" value="<c:out value="commande.montant"/>" size="20" maxlength="20" />
                     <br />
                     
                     <label for="modePaiementCommande">Mode de paiement <span class="requis">*</span></label>
-                    <input type="text" id="modePaiementCommande" name="modePaiementCommande" value='${modePaiement }' size="20" maxlength="20" />
+                    <input type="text" id="modePaiementCommande" name="modePaiementCommande" value="<c:out value="commande.modePaiement"/>" size="20" maxlength="20" />
                     <br />
                     
                     <label for="statutPaiementCommande">Statut du paiement</label>
-                    <input type="text" id="statutPaiementCommande" name="statutPaiementCommande" value='${statutPaiement }' size="20" maxlength="20" />
+                    <input type="text" id="statutPaiementCommande" name="statutPaiementCommande" value="<c:out value="commande.statutPaiement"/>" size="20" maxlength="20" />
                     <br />
                     
                     <label for="modeLivraisonCommande">Mode de livraison <span class="requis">*</span></label>
-                    <input type="text" id="modeLivraisonCommande" name="modeLivraisonCommande" value='${modeLivraison }' size="20" maxlength="20" />
+                    <input type="text" id="modeLivraisonCommande" name="modeLivraisonCommande" value="<c:out value="commande.modeLivraison"/>" size="20" maxlength="20" />
                     <br />
                     
                     <label for="statutLivraisonCommande">Statut de la livraison</label>
-                    <input type="text" id="statutLivraisonCommande" name="statutLivraisonCommande" value='${statutLivraison }' size="20" maxlength="20" />
+                    <input type="text" id="statutLivraisonCommande" name="statutLivraisonCommande" value=<c:out value="commande.statutLivraison"/> size="20" maxlength="20" />
                     <br />
                 </fieldset>
                 <input type="submit" value="Valider"  />
                 <input type="reset" value="Remettre à zéro" /> <br />
             </form>
-            <p class="info">${ message }</p>
+            <p class="info">${ validation.resultat }</p>
         </div>
 	</body>
 </html>
