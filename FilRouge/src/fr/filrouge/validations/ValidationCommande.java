@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import fr.filrouge.beans.Client;
 import fr.filrouge.beans.Commande;
 
 public class ValidationCommande {
@@ -30,6 +31,10 @@ public class ValidationCommande {
 	}
     
     public Commande validerNouvelleCommande (HttpServletRequest request) {
+    	
+    	ValidationClient validationClient = new ValidationClient();
+    	Client client = validationClient.validerNouveauClient(request);
+    	erreurs = validationClient.getErreurs();
 		
 //    	DateTime dt = new DateTime();
 //        DateTimeFormatter formatter = DateTimeFormat.forPattern( FORMAT_DATE );
@@ -42,6 +47,8 @@ public class ValidationCommande {
         String statutLivraison = getValeurChamp( request, CHAMP_STATUT_LIVRAISON );
         
     	Commande commande = new Commande();
+    	
+    	commande.setClient(client);
     	
     	double valeurMontant = -1;
         try {
