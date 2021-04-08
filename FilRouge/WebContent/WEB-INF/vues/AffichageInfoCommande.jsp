@@ -18,7 +18,7 @@
 	<p>Email : ${commande.client.mail }</p>
 	<br>
 	<p>Commande</p>
-	<p>Date : </p>
+	<p>Date : ${commande.date }</p>
 	<p>Montant : ${commande.montant }</p>
 	<p>Mode de paiement : ${commande.modePaiement }</p>
 	<p>Statut du paiement : ${commande.statutPaiement }</p>
