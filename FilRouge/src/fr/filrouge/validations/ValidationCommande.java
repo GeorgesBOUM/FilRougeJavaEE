@@ -1,5 +1,7 @@
 package fr.filrouge.validations;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,7 +12,7 @@ import fr.filrouge.beans.Commande;
 
 public class ValidationCommande {
 	
-	private static final String CHAMP_DATE             = "dateCommande";
+//	private static final String CHAMP_DATE             = "dateCommande";
     private static final String CHAMP_MONTANT          = "montantCommande";
     private static final String CHAMP_MODE_PAIEMENT    = "modePaiementCommande";
     private static final String CHAMP_STATUT_PAIEMENT  = "statutPaiementCommande";
@@ -37,6 +39,9 @@ public class ValidationCommande {
     	erreurs = validationClient.getErreurs();
 		
 //    	DateTime dt = new DateTime();
+    	LocalDateTime dt = LocalDateTime.now();
+    	DateTimeFormatter formatter = DateTimeFormatter.ofPattern( FORMAT_DATE );
+    	String date = dt.format(formatter);
 //        DateTimeFormatter formatter = DateTimeFormat.forPattern( FORMAT_DATE );
 //        String date = dt.toString( formatter );
 
@@ -49,6 +54,7 @@ public class ValidationCommande {
     	Commande commande = new Commande();
     	
     	commande.setClient(client);
+    	commande.setDate(date);
     	
     	double valeurMontant = -1;
         try {
