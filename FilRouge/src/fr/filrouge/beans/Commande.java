@@ -2,6 +2,7 @@ package fr.filrouge.beans;
 
 public class Commande {
 	Client client;
+	String date;
 	double montant;
 	String modePaiement;
 	String modeLivraison;
@@ -21,7 +22,10 @@ public class Commande {
 	public Client getClient() {
 		return client;
 	}
-
+	
+	public String getDate() {
+		return date;
+	}
 	public double getMontant() {
 		return montant;
 	}
@@ -41,7 +45,10 @@ public class Commande {
 	public String getStatutPaiement() {
 		return statutPaiement;
 	}
-
+	
+	public void setDate(String date) {
+		this.date = date;
+	}
 	public void setClient(Client client) {
 		this.client = client;
 	}
